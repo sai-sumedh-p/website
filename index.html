@@ -11,6 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800;900&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.82/build/spline-viewer.js"></script>
 </head>
 
 <body>
@@ -32,25 +33,11 @@
   <!-- HERO -->
   <section id="hero">
     <canvas id="particles-canvas"></canvas>
-    <!-- CSS 3D hero mesh fallback -->
-    <div class="hero-3d-mesh">
-      <div class="torus-ring r1"></div>
-      <div class="torus-ring r2"></div>
-      <div class="torus-ring r3"></div>
-      <div class="torus-ring r4"></div>
-      <div class="torus-ring r5"></div>
-      <div class="hex-grid">
-        <div class="hex"></div>
-        <div class="hex"></div>
-        <div class="hex"></div>
-        <div class="hex"></div>
-        <div class="hex"></div>
-        <div class="hex"></div>
-        <div class="hex"></div>
-        <div class="hex"></div>
-        <div class="hex"></div>
-      </div>
+    <!-- Spline 3D Robot -->
+    <div class="spline-wrapper">
+      <spline-viewer url="https://prod.spline.design/RFELyBsoNjOR42xJ/scene.splinecode" events-target="global" loading-anim-type="spinner-big-dark"></spline-viewer>
     </div>
+    <div class="hero-overlay"></div>
     <div class="hero-content">
       <h1 id="hero-name" class="glitch" data-text="Sai Sumedh P">Sai Sumedh P</h1>
       <p id="hero-subtitle" class="typewriter"></p>
@@ -140,7 +127,7 @@
     <div class="bento-grid">
       <div class="project-card large reveal-scale" data-category="robotics">
         <div class="project-featured-badge"><span class="pulse-dot"></span>Featured</div>
-        <div class="project-img" style="background:linear-gradient(135deg,rgba(0,212,255,0.15),rgba(57,255,20,0.08));">
+        <div class="project-img" style="background:linear-gradient(135deg,rgba(129,140,248,0.15),rgba(167,139,250,0.08));">
         </div>
         <div class="project-info">
           <h3>ICSRF 2025 Hackathon</h3>
@@ -151,7 +138,7 @@
         </div>
       </div>
       <div class="project-card small reveal-scale" data-category="ai">
-        <div class="project-img" style="background:linear-gradient(135deg,rgba(57,255,20,0.12),rgba(0,212,255,0.08));">
+        <div class="project-img" style="background:linear-gradient(135deg,rgba(167,139,250,0.12),rgba(129,140,248,0.08));">
         </div>
         <div class="project-info">
           <h3>CBSE Science Exhibition</h3>
@@ -161,7 +148,7 @@
         </div>
       </div>
       <div class="project-card small reveal-scale" data-category="hardware">
-        <div class="project-img" style="background:linear-gradient(135deg,rgba(0,212,255,0.12),rgba(10,42,63,0.8));">
+        <div class="project-img" style="background:linear-gradient(135deg,rgba(129,140,248,0.12),rgba(10,10,15,0.8));">
         </div>
         <div class="project-info">
           <h3>INSPIRE MANAK Award</h3>
@@ -172,7 +159,7 @@
       </div>
       <div class="project-card large reveal-scale" data-category="web">
         <div class="project-featured-badge"><span class="pulse-dot"></span>Featured</div>
-        <div class="project-img" style="background:linear-gradient(135deg,rgba(10,42,63,0.8),rgba(57,255,20,0.1));">
+        <div class="project-img" style="background:linear-gradient(135deg,rgba(10,10,15,0.8),rgba(167,139,250,0.1));">
         </div>
         <div class="project-info">
           <h3>Amrita Hackathon Winner</h3>
@@ -184,7 +171,7 @@
         </div>
       </div>
       <div class="project-card small reveal-scale" data-category="robotics">
-        <div class="project-img" style="background:linear-gradient(135deg,rgba(57,255,20,0.1),rgba(10,42,63,0.8));">
+        <div class="project-img" style="background:linear-gradient(135deg,rgba(167,139,250,0.1),rgba(10,10,15,0.8));">
         </div>
         <div class="project-info">
           <h3>Atal Tinkering Lab</h3>
@@ -194,7 +181,7 @@
         </div>
       </div>
       <div class="project-card small reveal-scale" data-category="ai">
-        <div class="project-img" style="background:linear-gradient(135deg,rgba(0,212,255,0.12),rgba(57,255,20,0.08));">
+        <div class="project-img" style="background:linear-gradient(135deg,rgba(129,140,248,0.12),rgba(167,139,250,0.08));">
         </div>
         <div class="project-info">
           <h3>CAD & Mechanism Design</h3>

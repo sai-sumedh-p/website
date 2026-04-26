@@ -9,12 +9,12 @@
   window.addEventListener('resize', resize);
 
   var dots = [];
-  var COUNT = 140;
+  var COUNT = 60;
   var mx = W / 2, my = H / 2;
   document.addEventListener('mousemove', function(e) { mx = e.clientX; my = e.clientY; });
 
   for (var i = 0; i < COUNT; i++) {
-    dots.push({ x: Math.random() * W, y: Math.random() * H, vx: (Math.random() - 0.5) * 0.4, vy: (Math.random() - 0.5) * 0.4, r: Math.random() * 1.5 + 0.5 });
+    dots.push({ x: Math.random() * W, y: Math.random() * H, vx: (Math.random() - 0.5) * 0.3, vy: (Math.random() - 0.5) * 0.3, r: Math.random() * 1.0 + 0.3 });
   }
 
   function draw() {
@@ -29,14 +29,14 @@
       if (dist < 150 && dist > 0) { d.x += dx / dist * 1.2; d.y += dy / dist * 1.2; }
       ctx.beginPath();
       ctx.arc(d.x, d.y, d.r, 0, Math.PI * 2);
-      ctx.fillStyle = 'rgba(0,212,255,0.45)';
+      ctx.fillStyle = 'rgba(129,140,248,0.25)';
       ctx.fill();
       for (var j = i + 1; j < dots.length; j++) {
         var d2 = dots[j];
         var dd = Math.sqrt((d.x - d2.x) * (d.x - d2.x) + (d.y - d2.y) * (d.y - d2.y));
-        if (dd < 110) {
+        if (dd < 100) {
           ctx.beginPath(); ctx.moveTo(d.x, d.y); ctx.lineTo(d2.x, d2.y);
-          ctx.strokeStyle = 'rgba(0,212,255,' + (0.12 * (1 - dd / 110)) + ')';
+          ctx.strokeStyle = 'rgba(129,140,248,' + (0.06 * (1 - dd / 100)) + ')';
           ctx.lineWidth = 0.5; ctx.stroke();
         }
       }
@@ -202,14 +202,14 @@ document.querySelectorAll('.filter-btn').forEach(function(btn) {
       var px4 = cx + Math.cos(a4) * R * v, py4 = cy + Math.sin(a4) * R * v;
       ai === 0 ? ctx.moveTo(px4, py4) : ctx.lineTo(px4, py4);
     }
-    ctx.fillStyle = 'rgba(0,212,255,0.12)'; ctx.fill();
-    ctx.strokeStyle = '#00d4ff'; ctx.lineWidth = 2; ctx.stroke();
+    ctx.fillStyle = 'rgba(129,140,248,0.12)'; ctx.fill();
+    ctx.strokeStyle = '#818cf8'; ctx.lineWidth = 2; ctx.stroke();
     for (ai = 0; ai < n; ai++) {
       var a5 = angle(ai);
       var v2 = values[ai] * Math.min(progress, 1);
       ctx.beginPath();
       ctx.arc(cx + Math.cos(a5) * R * v2, cy + Math.sin(a5) * R * v2, 4, 0, Math.PI * 2);
-      ctx.fillStyle = '#00d4ff'; ctx.fill();
+      ctx.fillStyle = '#818cf8'; ctx.fill();
     }
   }
 
