@@ -32,10 +32,28 @@ ul{list-style:none}
 #hero-name{font-size:clamp(3rem,8vw,7rem);font-weight:900;letter-spacing:-3px;line-height:1;margin-bottom:16px;text-shadow:0 0 60px rgba(0,0,0,0.8),0 0 120px rgba(0,0,0,0.6)}
 
 /* Spline 3D Viewer */
-.spline-wrapper{position:absolute;inset:0;z-index:2;width:100%;height:100%}
-.spline-wrapper spline-viewer{width:100%;height:100%;display:block}
+.spline-wrapper{position:absolute;inset:0;z-index:2;width:100%;height:100%;overflow:hidden}
+.spline-wrapper spline-viewer{position:absolute;top:-50px;left:0;width:100%;height:calc(100% + 100px);display:block}
 spline-viewer::part(logo){display:none!important}
-.spline-watermark-hide{position:absolute;bottom:10px;right:10px;width:160px;height:50px;background:#000000;z-index:10;border-radius:12px;pointer-events:none}
+
+/* Premium Simulation Environment */
+.spatial-environment{position:absolute;inset:0;perspective:1000px;z-index:1;pointer-events:none;overflow:hidden}
+.spatial-grid{position:absolute;bottom:-80%;left:-50%;width:200%;height:200%;background-image:linear-gradient(rgba(129,140,248,0.25) 1px,transparent 1px),linear-gradient(90deg,rgba(129,140,248,0.25) 1px,transparent 1px);background-size:60px 60px;transform:rotateX(75deg) translateY(0) translateZ(-250px);animation:gridPan 20s linear infinite;-webkit-mask-image:linear-gradient(to top,rgba(0,0,0,1) 5%,rgba(0,0,0,0) 60%);mask-image:linear-gradient(to top,rgba(0,0,0,1) 5%,rgba(0,0,0,0) 60%)}
+.spatial-glow{position:absolute;bottom:0;left:50%;width:150vw;height:80vh;transform:translateX(-50%);background:radial-gradient(ellipse at bottom center,rgba(129,140,248,0.15) 0%,rgba(167,139,250,0.05) 50%,transparent 70%)}
+
+@keyframes gridPan{0%{transform:rotateX(75deg) translateY(0) translateZ(-250px)}100%{transform:rotateX(75deg) translateY(60px) translateZ(-250px)}}
+
+/* Live 3D Tech Core Animation */
+.tech-core{position:absolute;top:50%;left:50%;width:60vmin;height:60vmin;transform:translate(-50%,-50%);transform-style:preserve-3d;animation:coreRotate 40s infinite linear;z-index:1;pointer-events:none}
+.core-ring{position:absolute;inset:0;border-radius:50%;border:1px solid rgba(129,140,248,0.3);box-shadow:0 0 20px rgba(129,140,248,0.1),inset 0 0 20px rgba(167,139,250,0.1)}
+.c1{transform:rotateY(0deg)}
+.c2{transform:rotateY(30deg)}
+.c3{transform:rotateY(60deg)}
+.c4{transform:rotateY(90deg)}
+.c5{transform:rotateY(120deg)}
+.c6{transform:rotateY(150deg)}
+
+@keyframes coreRotate{0%{transform:translate(-50%,-50%) rotateX(0deg) rotateY(0deg) rotateZ(0deg)}100%{transform:translate(-50%,-50%) rotateX(360deg) rotateY(360deg) rotateZ(360deg)}}
 
 /* Hero overlay for text readability */
 .hero-overlay{position:absolute;inset:0;z-index:3;background:radial-gradient(ellipse at center,rgba(0,0,0,0.3) 0%,rgba(0,0,0,0.1) 40%,transparent 70%);pointer-events:none}
