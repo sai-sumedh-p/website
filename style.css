@@ -1104,7 +1104,8 @@ spline-viewer::part(logo) {
   height: 80px;
   perspective: 800px;
   cursor: pointer;
-  position: relative
+  position: relative;
+  display: block;
 }
 
 .social-card>div {
@@ -1126,11 +1127,13 @@ spline-viewer::part(logo) {
 }
 
 .social-back {
-  background: rgba(129, 140, 248, 0.08);
-  border-color: rgba(129, 140, 248, 0.2) !important;
-  color: var(--blue);
+  background: var(--blue);
+  border-color: var(--blue) !important;
+  color: var(--bg);
   transform: rotateY(180deg);
-  justify-content: space-between
+  justify-content: space-between;
+  font-size: 1.05rem;
+  font-weight: 600;
 }
 
 .social-card:hover .social-front {
@@ -1142,8 +1145,9 @@ spline-viewer::part(logo) {
 }
 
 .social-hint {
-  font-size: .8rem;
-  color: var(--muted)
+  font-size: .95rem;
+  color: rgba(0, 0, 0, 0.7);
+  font-weight: 500;
 }
 
 /* Form */
