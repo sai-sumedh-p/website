@@ -392,12 +392,13 @@
         </div>
       </div>
       <div class="contact-form-wrap reveal-right">
-        <form id="contact-form" class="glass-card">
-          <div class="form-group"><input type="text" id="contact-name" required><label for="contact-name">Your
+        <form id="contact-form" class="glass-card" action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="ced0090e-07db-4f60-b29e-8ee2f74c2140">
+          <div class="form-group"><input type="text" id="contact-name" name="name" required><label for="contact-name">Your
               Name</label></div>
-          <div class="form-group"><input type="email" id="contact-email" required><label for="contact-email">Your
+          <div class="form-group"><input type="email" id="contact-email" name="email" required><label for="contact-email">Your
               Email</label></div>
-          <div class="form-group"><textarea id="contact-message" rows="4" required></textarea><label
+          <div class="form-group"><textarea id="contact-message" name="message" rows="4" required></textarea><label
               for="contact-message">Your Message</label></div>
           <button type="submit" id="contact-submit" class="magnetic-btn">
             <span class="btn-text">Send Message</span><span class="btn-loader"></span><span class="btn-check">✓</span>

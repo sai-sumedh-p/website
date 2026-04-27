@@ -246,13 +246,40 @@ document.querySelectorAll('#nav-links a').forEach(function (a) {
 // ========== CONTACT FORM ==========
 document.getElementById('contact-form').addEventListener('submit', function (e) {
   e.preventDefault();
+  var form = e.target;
   var btn = document.getElementById('contact-submit');
   btn.classList.add('loading');
-  setTimeout(function () {
+  
+  var formData = new FormData(form);
+  var object = Object.fromEntries(formData);
+  var json = JSON.stringify(object);
+
+  fetch('https://api.web3forms.com/submit', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
+    },
+    body: json
+  })
+  .then(function(response) {
+    return response.json();
+  })
+  .then(function(json) {
     btn.classList.remove('loading');
-    btn.classList.add('success');
-    setTimeout(function () { btn.classList.remove('success'); }, 2500);
-  }, 1500);
+    if (json.success) {
+      btn.classList.add('success');
+      form.reset();
+      setTimeout(function () { btn.classList.remove('success'); }, 2500);
+    } else {
+      alert("Error: " + json.message);
+    }
+  })
+  .catch(function(error) {
+    btn.classList.remove('loading');
+    alert("Something went wrong!");
+    console.log(error);
+  });
 });
 
 // ========== SMOOTH SCROLL ==========
