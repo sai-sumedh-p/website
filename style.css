@@ -1127,13 +1127,14 @@ spline-viewer::part(logo) {
 }
 
 .social-back {
-  background: var(--blue);
-  border-color: var(--blue) !important;
-  color: var(--bg);
+  background: rgba(129, 140, 248, 0.4);
+  border-color: rgba(129, 140, 248, 0.6) !important;
+  color: var(--white);
   transform: rotateY(180deg);
   justify-content: space-between;
   font-size: 1.05rem;
   font-weight: 600;
+  backdrop-filter: blur(12px);
 }
 
 .social-card:hover .social-front {
@@ -1146,7 +1147,7 @@ spline-viewer::part(logo) {
 
 .social-hint {
   font-size: .95rem;
-  color: rgba(0, 0, 0, 0.7);
+  color: rgba(255, 255, 255, 0.8);
   font-weight: 500;
 }
 
@@ -1376,7 +1377,8 @@ spline-viewer::part(logo) {
   width: 60%;
   height: 100%;
   overflow: hidden;
-  opacity: 0.8;
+  opacity: 1;
+  filter: brightness(1.2);
   pointer-events: none;
 }
 
