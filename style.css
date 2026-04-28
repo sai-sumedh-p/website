@@ -1318,34 +1318,54 @@ spline-viewer::part(logo) {
   opacity: 0.85;
   animation: floatGlow 15s infinite ease-in-out alternate;
 }
+
 .ambient-glow-1 {
-  width: 40vw; height: 40vw;
-  top: 10%; left: -10%;
+  width: 40vw;
+  height: 40vw;
+  top: 10%;
+  left: -10%;
   background: radial-gradient(circle, rgba(167, 139, 250, 0.18) 0%, transparent 70%);
 }
+
 .ambient-glow-2 {
-  width: 50vw; height: 50vw;
-  bottom: 10%; right: -20%;
+  width: 50vw;
+  height: 50vw;
+  bottom: 10%;
+  right: -20%;
   background: radial-gradient(circle, rgba(129, 140, 248, 0.15) 0%, transparent 70%);
   animation-delay: -5s;
 }
+
 .ambient-glow-3 {
-  width: 45vw; height: 45vw;
-  top: 30%; left: 40%;
+  width: 45vw;
+  height: 45vw;
+  top: 30%;
+  left: 40%;
   background: radial-gradient(circle, rgba(167, 139, 250, 0.12) 0%, transparent 70%);
   animation-delay: -10s;
 }
+
 .ambient-glow-4 {
-  width: 60vw; height: 60vw;
-  top: 20%; left: -20%;
+  width: 60vw;
+  height: 60vw;
+  top: 20%;
+  left: -20%;
   background: radial-gradient(circle, rgba(129, 140, 248, 0.12) 0%, transparent 70%);
   animation-delay: -2s;
 }
 
 @keyframes floatGlow {
-  0% { transform: translate(0, 0) scale(1); }
-  50% { transform: translate(5%, 10%) scale(1.1); }
-  100% { transform: translate(-5%, 5%) scale(0.9); }
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  50% {
+    transform: translate(5%, 10%) scale(1.1);
+  }
+
+  100% {
+    transform: translate(-5%, 5%) scale(0.9);
+  }
 }
 
 .section-grid {
@@ -1365,8 +1385,13 @@ spline-viewer::part(logo) {
 }
 
 @keyframes gridMove {
-  0% { background-position: 0 0; }
-  100% { background-position: 0 50px; }
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 0 50px;
+  }
 }
 
 .contact-spline {
@@ -1403,7 +1428,13 @@ spline-viewer::part(logo) {
 }
 
 /* Ensure content sits above backgrounds */
-.section-header, .about-grid, .project-filters, .bento-grid, .skills-content, .timeline, .contact-grid {
+.section-header,
+.about-grid,
+.project-filters,
+.bento-grid,
+.skills-content,
+.timeline,
+.contact-grid {
   position: relative;
   z-index: 10;
 }
@@ -1520,7 +1551,7 @@ spline-viewer::part(logo) {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 120px;
+  margin: 60px 0 80px 0;
   position: relative;
   z-index: 10;
 }
@@ -1540,7 +1571,7 @@ spline-viewer::part(logo) {
   font-weight: 600;
   text-decoration: none;
   transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-  box-shadow: 0 0 25px rgba(167, 139, 250, 0.3);
+  box-shadow: 0 0 10px rgba(167, 139, 250, 0.5), 0 0 20px rgba(167, 139, 250, 0.3), 0 0 40px rgba(167, 139, 250, 0.1);
 }
 
 .neon-resume-btn::before {
@@ -1549,9 +1580,9 @@ spline-viewer::part(logo) {
   inset: -2px;
   border-radius: 52px;
   padding: 2px;
-  background: linear-gradient(90deg, var(--blue), var(--accent), #6366f1, var(--accent), var(--blue));
+  background: linear-gradient(90deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
   background-size: 400% 100%;
-  animation: rgbBorder 8s linear infinite;
+  animation: rgbBorder 12s linear infinite;
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
@@ -1563,7 +1594,7 @@ spline-viewer::part(logo) {
 .neon-resume-btn:hover {
   transform: translateY(-4px);
   color: #fff;
-  box-shadow: 0 0 40px rgba(167, 139, 250, 0.6);
+  box-shadow: 0 0 15px rgba(167, 139, 250, 0.8), 0 0 30px rgba(167, 139, 250, 0.6), 0 0 60px rgba(167, 139, 250, 0.3);
 }
 
 .neon-resume-btn:hover::before {
@@ -1571,8 +1602,13 @@ spline-viewer::part(logo) {
 }
 
 @keyframes rgbBorder {
-  0% { background-position: 0% 50%; }
-  100% { background-position: 400% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+
+  100% {
+    background-position: 400% 50%;
+  }
 }
 
 .neon-resume-icon {
